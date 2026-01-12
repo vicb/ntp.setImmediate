@@ -1,0 +1,19 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "immediate",
+	"main": "src/index.ts",
+	"compatibility_date": "2025-12-24",
+	"compatibility_flags": [
+		"nodejs_compat",
+		// This requires a build of workerd including https://github.com/cloudflare/workerd/pull/5847
+		"require_returns_default_export",
+		"experimental"
+	],
+	"observability": {
+		"enabled": true
+	}
+}
